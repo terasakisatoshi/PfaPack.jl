@@ -1,0 +1,12 @@
+# Generated shared libraries
+deps/*.dylib
+deps/*.so
+deps/*.dll
+
+# Build artifacts
+deps/*.o
+deps/build.log
+
+# Julia artifacts
+Manifest.toml
+deps/*.mod
