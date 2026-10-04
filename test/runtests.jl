@@ -3,6 +3,7 @@ using LinearAlgebra
 using PfaPack
 
 include("test_complex_rank2_c_order.jl")
+include("test_real_rank2_c_order.jl")
 
 @testset "PfaPack.jl" begin
     @testset "pfaffian_ltl!" begin

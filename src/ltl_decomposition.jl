@@ -133,8 +133,8 @@ function julia_dsktf2!(A::AbstractMatrix{Float64}, iPiv::Vector{<:Integer})
                 temp2 = alpha * A[j, k]   # alpha * x[j]
 
                 @simd for i in 1:j-1
-                    # A[i,j] += x[i]*temp1 - y[i]*temp2
-                    A[i, j] += A[i, k] * temp1 - A[i, kk] * temp2
+                    # DSKR2 adds the first product before subtracting the second.
+                    A[i, j] = (A[i, j] + A[i, k] * temp1) - A[i, kk] * temp2
                 end
 
                 # Diagonal must be zero for skew-symmetric
