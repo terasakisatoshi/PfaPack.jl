@@ -2,6 +2,8 @@ using Test
 using LinearAlgebra
 using PfaPack
 
+include("test_complex_rank2_c_order.jl")
+
 @testset "PfaPack.jl" begin
     @testset "pfaffian_ltl!" begin
         @testset "Real matrices" begin
